@@ -1,3 +1,134 @@
-#app {
-  background-color: red;
+@light-grey: #CACCCF;
+@white: #FAFAFA;
+@off-white: #EBE5E5;
+@header-grey: rgba(64, 72, 83, .7);
+
+@blue100: rgba(30, 25, 74, 1);
+@blue75: rgba(61, 90, 128, 1);
+@blue50: rgba(152, 193, 217, 1);
+@blue25: rgba(224, 251, 252, 1);
+
+@salmon-light: rgba(235, 114, 85, 1);
+@salmon: rgba(238, 108, 77, 1);
+@salmon-med: rgba(247, 94, 57, 1);
+@salmon-dark: rgba(228, 71, 34, 1);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: @light-grey;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+.page {
+  background-color: @white;
+  margin: 0 auto;
+  width: 990px;
+  max-width: 95%;
+  border-radius: 2px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 1px 3px 8px -1px #777C84;
+}
+
+.splash-image {
+  width: 510px;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.content {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  width: 630px;
+}
+
+.header {
+  background-color: rgba(61, 90, 128, .8);
+  padding: 45px 30px;
+  border-radius: 2px;
+  color: @off-white;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Damion', cursive;
+  font-size: 72px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: 'Hind', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+form {
+  display: inline-block;
+}
+
+.ctas {
+  position: relative;
+  width: 630px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-family: 'Hind', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  transition: background-color .11s ease;
+}
+
+.primary-button {
+  width: 260px;
+  height: 60px;
+  background-color: @salmon-light;
+  background-image: linear-gradient(
+    to bottom, fade(@salmon-light, 25%) 0%, @salmon-dark 77%);
+  color: @white;
+
+  &:hover {
+    background-color: @salmon;
+  }
+}
+
+.secondary-button {
+  width: 180px;
+  height: 60px;
+  background-color: @blue50;
+  background-image: linear-gradient(
+    to bottom, fade(@blue25, 25%) 0%, @blue50 77%);
+  color: @white;
+
+  &:hover {
+    background-color: @blue50;
+  }
+}
+
+.about {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  font-family: 'Hind', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
 }
