@@ -17,7 +17,7 @@ app.post('/send-email', (req, res) => {
   const { content } = req.body;
   mailer({
     from: 'hello@noodlesnotes.com',
-    to: 'learykara@gmail.com',
+    to: 'cibrewery@gmail.com',
     subject: 'New contact from noodlesnotes.com',
     html: content,
   }, (err, reply) => {
