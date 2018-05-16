@@ -98,6 +98,7 @@ h1 {
   font-family: 'Damion', cursive;
   font-weight: 500;
   margin-bottom: 30px;
+  line-height: 60px;
 
   @media @tablet {
     font-size: 72px;
@@ -108,9 +109,21 @@ h2 {
   font-family: 'Hind', sans-serif;
   font-size: 24px;
   font-weight: 400;
+  line-height: 30px;
 
   @media @tablet {
     font-size: 30px;
+  }
+}
+
+h3 {
+  font-family: 'Hind', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+
+  @media @tablet {
+    font-size: 22px;
   }
 }
 
@@ -144,7 +157,7 @@ form {
   outline: none;
   border: none;
   font-family: 'Hind', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   text-decoration: none;
   vertical-align: top;
@@ -152,12 +165,8 @@ form {
   height: 45px;
   margin-bottom: 10px;
 
-  @media @tablet {
-    height: 60px;
-  }
-
   + .button {
-    @media @tablet {
+    @media @nonmini {
       margin-left: 10px;
     }
   }
@@ -171,7 +180,7 @@ form {
   color: @white;
 
   @media @tablet {
-    width: 260px;
+    width: 180px;
   }
 
   &:hover {
@@ -191,7 +200,7 @@ form {
   }
 
   @media @tablet {
-    width: 180px;
+    // width: 180px;
   }
 
   &:hover {
@@ -218,4 +227,67 @@ form {
     padding: 0;
     background-color: transparent;
   }
+}
+
+.modal-underlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: @blue100;
+  opacity: .8;
+  z-index: 100;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  background-color: @white;
+  max-height: 100vh;
+  overflow-y: scroll;
+  z-index: 101;
+  display: none;
+
+  @media @tablet {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    bottom: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px fade(@blue100, 50%);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal-header {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 30px;
+  font-family: 'Hind', sans-serif;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 10px;
+  border-color: @light-grey;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.success-text,
+.error-text {
+  display: none;
 }

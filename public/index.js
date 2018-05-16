@@ -1,4 +1,6 @@
-const hideModal = (e) => {
+'use strict';
+
+var hideModal = function hideModal(e) {
   e && e.preventDefault();
   $('.modal-underlay').hide();
   $('.modal').hide();
@@ -6,7 +8,7 @@ const hideModal = (e) => {
   $('.error-text').hide();
 };
 
-const showModal = (e) => {
+var showModal = function showModal(e) {
   e.preventDefault();
 
   $('.modal-underlay').show();
@@ -15,31 +17,31 @@ const showModal = (e) => {
   $('.contact-textarea').focus();
 };
 
-const resetSubmitButton = () => {
+var resetSubmitButton = function resetSubmitButton() {
   $('.js-contact-form .primary-button').text('Submit').attr('disabled', false);
 };
 
-const resetForm = () => {
+var resetForm = function resetForm() {
   $('.success-text').hide();
   $('.js-contact-form').show();
   $('.contact-textarea').val('');
   resetSubmitButton();
 };
 
-$(document).ready(() => {
+$(document).ready(function () {
   $('.js-contact-button').click(showModal);
   $('.js-cancel-button').click(hideModal);
   $('.modal-underlay').click(hideModal);
 
-  window.addEventListener('keydown', (event) => {
+  window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       hideModal();
     }
   });
 
-  $('.js-contact-form').submit((event) => {
+  $('.js-contact-form').submit(function (event) {
     event.preventDefault();
-    const content = ($(event.target).find('textarea').val() || '').trim();
+    var content = ($(event.target).find('textarea').val() || '').trim();
 
     if (!content) {
       return;
@@ -49,17 +51,17 @@ $(document).ready(() => {
 
     $.ajax('/send-email', {
       contentType: 'application/json',
-      data: JSON.stringify({ content }),
-      method: 'POST',
-    }).done(() => {
+      data: JSON.stringify({ content: content }),
+      method: 'POST'
+    }).done(function () {
       $('.js-contact-form').hide();
       $('.success-text').show();
 
-      window.setTimeout(() => {
+      window.setTimeout(function () {
         hideModal();
         resetForm();
       }, 3000);
-    }).fail(() => {
+    }).fail(function () {
       $('.error-text').show();
       resetSubmitButton();
     });

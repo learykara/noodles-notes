@@ -17,6 +17,14 @@
     <meta property="og:title" content="Noodle's Notes: 50 Years of sailing in the Hawaiian Islands" />
     <meta property="og:description" content="Free PDF download of the popular Hawaii cruising guide" />
     <meta property="og:image" content="static/images/mokupea.jpg" />
+
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:title" content="Noodle's Notes: 50 years of sailing in the Hawaiian islands">
+    <meta name="twitter:description" content="Free PDF download of the popular Hawaii cruising guide">
+
+    <meta itemprop="name" content="Noodle's Notes: 50 years of sailing in the Hawaiian islands">
+    <meta itemprop="description" content="Free PDF download of the popular Hawaii cruising guide">
+    <meta itemprop="image" content="static/images/mokupea.jpg">
   </head>
   <body>
     <div class="page">
@@ -36,7 +44,7 @@
             Download
           </a>
 
-          <button class="button secondary-button">Contact</button>
+          <button class="button secondary-button js-contact-button">Contact</button>
           <a class="button secondary-button" href="https://mokupea.blogspot.com" target="_blank">Blog</a>
         </div>
       </div>
@@ -48,6 +56,22 @@
         Noodle continues to cruise around the world and is a devoted blogger on these trips. You can follow along on his ongoing adventures via the "Blog" link above.
       </p>
     </div>
+
+    <div class="modal-underlay"></div>
+    <div class="modal contact-modal">
+      <form class="js-contact-form">
+        <h3 class="modal-header">If you loved Noodle's Notes, or found something outdated, send a note to Noodle</h3>
+        <textarea class="contact-textarea" rows="8" placeholder="Start typing..."></textarea>
+
+        <button class="button primary-button" type="submit">Send</button>
+        <button class="button secondary-button js-cancel-button">Cancel</button>
+      </form>
+      <h3 class="success-text">Your message was sent!</h3>
+      <h3 class="error-text">Something went wrong. Please try again later.</h3>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/index.js"></script>
 
   </body>
 </html>
