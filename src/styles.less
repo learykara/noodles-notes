@@ -1,7 +1,7 @@
-@light-grey: #CACCCF;
-@white: #FAFAFA;
-@off-white: #EBE5E5;
-@header-grey: rgba(64, 72, 83, .7);
+@light-grey: #cacccf;
+@white: #fafafa;
+@off-white: #ebe5e5;
+@header-grey: rgba(64, 72, 83, 0.7);
 
 @blue100: rgba(30, 25, 74, 1);
 @blue75: rgba(61, 90, 128, 1);
@@ -14,11 +14,10 @@
 @salmon-dark: rgba(228, 71, 34, 1);
 
 /* random bc why not */
-@nonmini: ~"screen and (min-width: 550px)";
+@nonmini: ~'screen and (min-width: 550px)';
 
 /* tablet vertical */
-@tablet: ~"screen and (min-width: 768px)";
-
+@tablet: ~'screen and (min-width: 768px)';
 
 * {
   box-sizing: border-box;
@@ -37,7 +36,7 @@ body {
 
 .page {
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 15px 45px 15px;
   position: relative;
 
   @media @tablet {
@@ -45,12 +44,12 @@ body {
     width: 990px;
     max-width: 95%;
     border-radius: 2px;
-    box-shadow: 1px 3px 8px -1px #777C84;
+    box-shadow: 1px 3px 8px -1px #777c84;
   }
 }
 
 .splash-image {
-  opacity: .5;
+  opacity: 0.5;
   position: fixed;
   min-width: 100vw;
   min-height: 100vh;
@@ -80,8 +79,13 @@ body {
   }
 }
 
+.content-lower {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
-  background-color: rgba(61, 90, 128, .8);
+  background-color: rgba(61, 90, 128, 0.8);
   padding: 30px 30px;
   border-radius: 2px;
   color: @off-white;
@@ -131,23 +135,6 @@ form {
   display: inline-block;
 }
 
-.ctas {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media @nonmini {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media @tablet {
-    margin-right: 0;
-  }
-}
-
 .button {
   display: inline-flex;
   justify-content: center;
@@ -161,9 +148,10 @@ form {
   text-align: center;
   text-decoration: none;
   vertical-align: top;
-  transition: background-color .11s ease;
+  transition: background-color 0.11s ease;
   height: 45px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+  align-self: center;
 
   + .button {
     @media @nonmini {
@@ -173,14 +161,18 @@ form {
 }
 
 .primary-button {
-  width: 200px;
   background-color: @salmon-light;
   background-image: linear-gradient(
-    to bottom, fade(@salmon-light, 25%) 0%, @salmon-dark 77%);
+    to bottom,
+    fade(@salmon-light, 25%) 0%,
+    @salmon-dark 77%
+  );
   color: @white;
+  padding: 0 20px;
+  min-width: 200px;
 
   @media @tablet {
-    width: 180px;
+    min-width: 180px;
   }
 
   &:hover {
@@ -192,7 +184,10 @@ form {
   width: 200px;
   background-color: @blue50;
   background-image: linear-gradient(
-    to bottom, fade(@blue25, 25%) 0%, @blue50 77%);
+    to bottom,
+    fade(@blue25, 25%) 0%,
+    @blue50 77%
+  );
   color: @white;
 
   @media @nonmini {
@@ -216,12 +211,12 @@ form {
   font-family: 'Hind', sans-serif;
   font-size: 16px;
   line-height: 30px;
+  align-self: flex-start;
 
   background-color: white;
   padding: 15px;
   border-radius: 2px;
   margin-top: 15px;
-
 
   @media @tablet {
     padding: 0;
@@ -238,7 +233,7 @@ form {
   top: 0;
   bottom: 0;
   background-color: @blue100;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 100;
   display: none;
 }

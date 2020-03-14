@@ -10,26 +10,26 @@ body {
 @media screen and (min-width: 768px) {
   body {
     background-image: none;
-    background-color: #CACCCF;
+    background-color: #cacccf;
     padding-top: 70px;
   }
 }
 .page {
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 15px 45px 15px;
   position: relative;
 }
 @media screen and (min-width: 768px) {
   .page {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     width: 990px;
     max-width: 95%;
     border-radius: 2px;
-    box-shadow: 1px 3px 8px -1px #777C84;
+    box-shadow: 1px 3px 8px -1px #777c84;
   }
 }
 .splash-image {
-  opacity: .5;
+  opacity: 0.5;
   position: fixed;
   min-width: 100vw;
   min-height: 100vh;
@@ -58,11 +58,15 @@ body {
     width: 630px;
   }
 }
+.content-lower {
+  display: flex;
+  flex-direction: column;
+}
 .header {
   background-color: rgba(61, 90, 128, 0.8);
   padding: 30px 30px;
   border-radius: 2px;
-  color: #EBE5E5;
+  color: #ebe5e5;
   margin-bottom: 15px;
 }
 @media screen and (min-width: 768px) {
@@ -108,24 +112,6 @@ h3 {
 form {
   display: inline-block;
 }
-.ctas {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media screen and (min-width: 550px) {
-  .ctas {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  .ctas {
-    margin-right: 0;
-  }
-}
 .button {
   display: inline-flex;
   justify-content: center;
@@ -141,7 +127,8 @@ form {
   vertical-align: top;
   transition: background-color 0.11s ease;
   height: 45px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+  align-self: center;
 }
 @media screen and (min-width: 550px) {
   .button + .button {
@@ -149,14 +136,15 @@ form {
   }
 }
 .primary-button {
-  width: 200px;
   background-color: #eb7255;
   background-image: linear-gradient(to bottom, rgba(235, 114, 85, 0.25) 0%, #e44722 77%);
-  color: #FAFAFA;
+  color: #fafafa;
+  padding: 0 20px;
+  min-width: 200px;
 }
 @media screen and (min-width: 768px) {
   .primary-button {
-    width: 180px;
+    min-width: 180px;
   }
 }
 .primary-button:hover {
@@ -166,7 +154,7 @@ form {
   width: 200px;
   background-color: #98c1d9;
   background-image: linear-gradient(to bottom, rgba(224, 251, 252, 0.25) 0%, #98c1d9 77%);
-  color: #FAFAFA;
+  color: #fafafa;
 }
 @media screen and (min-width: 550px) {
   .secondary-button {
@@ -186,6 +174,7 @@ form {
   font-family: 'Hind', sans-serif;
   font-size: 16px;
   line-height: 30px;
+  align-self: flex-start;
   background-color: white;
   padding: 15px;
   border-radius: 2px;
@@ -206,7 +195,7 @@ form {
   top: 0;
   bottom: 0;
   background-color: #1e194a;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 100;
   display: none;
 }
@@ -217,7 +206,7 @@ form {
   right: 0;
   bottom: 0;
   padding: 30px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   max-height: 100vh;
   overflow-y: scroll;
   z-index: 101;
@@ -246,7 +235,7 @@ textarea {
   font-size: 14px;
   line-height: 15px;
   padding: 10px;
-  border-color: #CACCCF;
+  border-color: #cacccf;
 }
 textarea:focus {
   outline: none;
