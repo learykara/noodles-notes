@@ -2,7 +2,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -10,5 +10,6 @@ npm install
 npm run serve
 
 # build for development
-npm run build:dev
+npm run build:js:dev
+npm run build:less:dev
 ```

@@ -112,6 +112,12 @@ h3 {
 form {
   display: inline-block;
 }
+.button-container {
+  text-align: center;
+}
+.button-container .button {
+  margin-right: 20px;
+}
 .button {
   display: inline-flex;
   justify-content: center;
@@ -151,7 +157,7 @@ form {
   background-color: #ee6c4d;
 }
 .secondary-button {
-  width: 200px;
+  min-width: 200px;
   background-color: #98c1d9;
   background-image: linear-gradient(to bottom, rgba(224, 251, 252, 0.25) 0%, #98c1d9 77%);
   color: #fafafa;
@@ -185,6 +191,15 @@ form {
     padding: 0;
     background-color: transparent;
   }
+}
+ul {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Hind', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  list-style-type: circle;
 }
 .modal-underlay {
   position: fixed;

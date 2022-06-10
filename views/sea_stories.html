@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,  initial-scale=1" />
+
+    <title>Noodle's Notes</title>
+    <meta
+      name="description"
+      content="Free resources for sailors in Hawaii and the Pacific, including the popular Hawaiian-island cruising guide"
+    />
+    <link rel="icon" type="image/svg" href="static/images/N.png" />
+
+    <link rel="stylesheet" type="text/css" href="static/reset.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Damion|Hind"
+      rel="stylesheet"
+    />
+
+    <meta property="og:url" content="http://www.noodlesnotes.com" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Noodle's Notes: 50 years of voyaging in Hawaii and the Pacific"
+    />
+    <meta
+      property="og:description"
+      content="Free resources for sailors in Hawaii and the Pacific, including the popular Hawaiian-island cruising guide"
+    />
+    <meta property="og:image" content="static/images/mokupea.jpg" />
+
+    <meta name="twitter:card" value="summary" />
+    <meta
+      name="twitter:title"
+      content="Noodle's Notes: 50 years of voyaging in Hawaii and the Pacific"
+    />
+    <meta
+      name="twitter:description"
+      content="Free resources for sailors in Hawaii and the Pacific, including the popular Hawaiian-island cruising guide"
+    />
+
+    <meta
+      itemprop="name"
+      content="Noodle's Notes: 50 years of voyaging in Hawaii and the Pacific"
+    />
+    <meta
+      itemprop="description"
+      content="Free resources for sailors in Hawaii and the Pacific, including the popular Hawaiian-island cruising guide"
+    />
+    <meta itemprop="image" content="static/images/mokupea.jpg" />
+  </head>
+
+  <body>
+    <div class="page">
+      <img class="splash-image" src="static/images/mokupea.jpg" />
+
+      <div class="content">
+        <div class="header">
+          <h1>Noodle's Sea Stories</h1>
+        </div>
+      </div>
+
+      <div class="content-lower">
+        <p class="about">
+          Noodle loves to swap sea stories with his shipmates over a cold one,
+          and has written down a few of his saltier tales so he doesn't forget
+          them in his old age. Check them out here. Some of the earlier stories
+          provide background for those that follow, so they are best read in the
+          order listed.
+        </p>
+
+        <ul>
+          <% stories.forEach(function(story) { %>
+          <li>
+            <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
