@@ -43,6 +43,10 @@ app.post('/send-email', (req, res) => {
   );
 });
 
+app.get('/static/noodles_notes.pdf', (req, res) => {
+  res.status(303).redirect('/');
+});
+
 const server = app.listen(port, () => {
   const host = server.address().address;
   console.log('App listening at http://%s:%s', host, port);
