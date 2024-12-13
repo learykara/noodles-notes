@@ -30,7 +30,7 @@
     "less-watch-compile": "^2.1.0"
   },
   "dependencies": {
-    "ejs": "^2.5.9",
+    "ejs": "^3.1.7",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "sendmail": "^1.4.1"
