@@ -1,5 +1,8 @@
+// Import styles
+require('./styles.less');
+
 const hideModal = (e) => {
-  e && e.preventDefault();
+  e?.preventDefault();
   $('.modal-underlay').hide();
   $('.modal').hide();
   $('.success-text').hide();
@@ -8,10 +11,8 @@ const hideModal = (e) => {
 
 const showModal = (e) => {
   e.preventDefault();
-
   $('.modal-underlay').show();
   $('.modal').show();
-
   $('.contact-textarea').focus();
 };
 
@@ -27,9 +28,9 @@ const resetForm = () => {
 };
 
 $(document).ready(() => {
-  $('.js-contact-button').click(showModal);
-  $('.js-cancel-button').click(hideModal);
-  $('.modal-underlay').click(hideModal);
+  $('.js-contact-button').on('click', showModal);
+  $('.js-cancel-button').on('click', hideModal);
+  $('.modal-underlay').on('click', hideModal);
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
@@ -37,7 +38,7 @@ $(document).ready(() => {
     }
   });
 
-  $('.js-contact-form').submit((event) => {
+  $('.js-contact-form').on('submit', (event) => {
     event.preventDefault();
     const content = ($(event.target).find('textarea').val() || '').trim();
 
@@ -47,21 +48,24 @@ $(document).ready(() => {
 
     $('.js-contact-form .primary-button').text('Loading...').attr('disabled', true);
 
-    $.ajax('/send-email', {
+    $.ajax({
+      url: '/send-email',
       contentType: 'application/json',
       data: JSON.stringify({ content }),
       method: 'POST',
-    }).done(() => {
-      $('.js-contact-form').hide();
-      $('.success-text').show();
+    })
+      .done(() => {
+        $('.js-contact-form').hide();
+        $('.success-text').show();
 
-      window.setTimeout(() => {
-        hideModal();
-        resetForm();
-      }, 3000);
-    }).fail(() => {
-      $('.error-text').show();
-      resetSubmitButton();
-    });
+        setTimeout(() => {
+          hideModal();
+          resetForm();
+        }, 3000);
+      })
+      .fail(() => {
+        $('.error-text').show();
+        resetSubmitButton();
+      });
   });
 });
