@@ -1,0 +1,7 @@
+{
+  "watch": ["index.js", "src/stories.js"],
+  "ext": "js",
+  "ignore": ["node_modules", "public"],
+  "exec": "node index.js"
+}
+
