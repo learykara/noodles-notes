@@ -4,7 +4,12 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8080;
-const mailer = Sendmail();
+const mailer = Sendmail({
+  dkim: {
+    privateKey: process.env.DKIM_PRIVATE_KEY,
+    keySelector: process.env.DKIM_KEY_SELECTOR || 'default',
+  },
+});
 
 const STORIES = require('./src/stories.js');
 
