@@ -241,50 +241,6 @@ ul {
   list-style-type: circle;
 }
 
-.modal-underlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: @blue100;
-  opacity: 0.8;
-  z-index: 100;
-  display: none;
-}
-
-.modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 30px;
-  background-color: @white;
-  max-height: 100vh;
-  overflow-y: scroll;
-  z-index: 101;
-  display: none;
-
-  @media @tablet {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    bottom: auto;
-    border-radius: 3px;
-    box-shadow: 0 1px 2px fade(@blue100, 50%);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.modal-header {
-  margin-bottom: 15px;
-}
-
 textarea {
   width: 100%;
   margin-bottom: 30px;
