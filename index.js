@@ -1,15 +1,8 @@
 const express = require('express');
-const Sendmail = require('sendmail');
 const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8080;
-const mailer = Sendmail({
-  dkim: {
-    privateKey: process.env.DKIM_PRIVATE_KEY,
-    keySelector: process.env.DKIM_KEY_SELECTOR || 'default',
-  },
-});
 
 const STORIES = require('./src/stories.js');
 
@@ -29,31 +22,6 @@ app.get('/sea-stories', (req, res) => {
   res.render('sea_stories.html', {
     stories: STORIES,
   });
-});
-
-app.post('/send-email', (req, res) => {
-  const { content } = req.body;
-  
-  if (!content || !content.trim()) {
-    return res.status(400).json({ error: 'Content is required' });
-  }
-
-  mailer(
-    {
-      from: 'hello@noodlesnotes.com',
-      to: 'cibrewery@gmail.com',
-      subject: 'New contact from noodlesnotes.com',
-      html: content.trim(),
-    },
-    (err, reply) => {
-      if (err) {
-        console.error('Email error:', err);
-        return res.status(500).json({ error: 'Failed to send email' });
-      }
-      console.log('Email sent:', reply);
-      res.status(200).json({ success: true });
-    }
-  );
 });
 
 app.get('/static/noodles_notes.pdf', (req, res) => {
