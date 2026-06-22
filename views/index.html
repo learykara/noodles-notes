@@ -175,15 +175,22 @@
           send a note to Noodle.
         </p>
 
-        <a class="button secondary-button" href="mailto:cibrewery@gmail.com?subject=New%20contact%20from%20Noodle's%20Notes">Contact</a>
+        <button type="button" class="button secondary-button" id="contact-button">
+          Contact
+        </button>
       </div>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
+    <div class="contact-modal" id="contact-modal" hidden>
+      <div class="contact-modal-backdrop"></div>
+      <div class="contact-modal-content">
+        <p>
+          Contact Noodle at
+          <a href="mailto:cibrewery@gmail.com">cibrewery@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
     <script type="text/javascript" src="static/bundle.js"></script>
   </body>
 </html>
